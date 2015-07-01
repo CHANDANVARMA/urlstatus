@@ -52,7 +52,7 @@ def send_mail(mail_id):
     fileMsg = email.mime.base.MIMEBase('application','vnd.ms-excel')
     fileMsg.set_payload(file(Master_File_UPLOAD_ROOT).read())
     email.encoders.encode_base64(fileMsg)
-    fileMsg.add_header('Content-Disposition','attachment;filename=Output.xls')
+    fileMsg.add_header('Content-Disposition','attachment;filename=status_report.xls')
     emailMsg.attach(fileMsg)
     # send email
     server = smtplib.SMTP('smtp.gmail.com')
