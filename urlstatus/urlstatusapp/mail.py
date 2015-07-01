@@ -4,7 +4,7 @@ from xlrd import open_workbook
 from views import get_status_code
 
 
-#provide the GUI of to enter an email id
+#to provide a facility to enter a email id
 def mail(request):
     template_name="urlstatusapp/mail.html"
     context={}
@@ -14,8 +14,7 @@ def mail(request):
         send_mail(mail_id)
     return render(request,template_name,context)
 
-#url_xls_read function for to read the given url in url_list.xls and pass the data into get_status_code
-#to get the status code.
+#Read the each url in given xls file.
 def url_xls_read():
     workbook=open_workbook('urlstatus/filestorage/upload_root/url_list.xls',on_demand=True)
     worksheet = workbook.sheet_by_index(0)
@@ -29,7 +28,7 @@ def url_xls_read():
             get_status_code(variant_string)
 
 
-#send_mail function provide a functionality to send a mail with attach status_code.xls which is contain the status code of given urls.
+#To send a mail with attach status_code.xls which is contain the status code of given urls.
 def send_mail(mail_id):
     Master_File_UPLOAD_ROOT='urlstatus/filestorage/upload_root/status_code.xls'
     to = [mail_id]
