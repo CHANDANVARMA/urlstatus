@@ -1,0 +1,51 @@
+{% load staticfiles %}
+<HTML>
+<HEAD>
+     <TITLE>URL STATUS CODE APPLICATION</TITLE>
+     <script type="text/javascript" src="{{ STATIC_URL }}/check.js"></script>
+     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/check.css" />
+
+
+</HEAD>
+ <body style="background:#f58220; font-f">
+
+    <div style="background: #f79f54; width: 500px; margin: auto; padding: 20px; margin-top: 100px">
+
+<form name="Login" method="post" action="/url_status_code/">
+    {%csrf_token%}
+    {{message}}
+    <font color="ff0000">{{msg}}</font>
+		<table cellpadding="8" spellcheck="4">
+			<tr>
+				<td>URL 1</td>
+				<td><input type="text" value="" name="URL1" style="padding:5px; width:280px"> </td>
+			</tr>
+			<tr>
+				<td>URL 2</td>
+				<td><input type="text" value="" name="URL2" style="padding:5px; width:280px"></td>
+			</tr>
+            <tr>
+				<td>URL 3</td>
+				<td><input type="text" value="" name="URL3" style="padding:5px; width:280px"></td>
+			</tr>
+            <tr>
+				<td>URL 4</td>
+				<td><input type="text" value="" name="URL4" style="padding:5px; width:280px"></td>
+			</tr>
+            <tr>
+				<td>URL 5</td>
+				<td><input type="text" value="" name="URL5" style="padding:5px; width:280px"></td>
+			</tr>
+
+			<tr>
+				<td> </td>
+                <td><input type="button" value="Submit" style="padding:2px; font-size:15px;" name="Submit" onclick="javascript:login();"></td>
+            </tr>
+		</table>
+
+    </form>
+
+
+    </div>
+</BODY>
+</HTML>
